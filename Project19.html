@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 19</title>
+    <style>
+        .body{
+            margin-left: 35%;
+            margin-top: 10%;
+            font-size: 50px;
+            font-family: Times New Roman;
+        }
+        .h1{
+            font-size: 40px;
+            display: inline-block;
+        }
+        .opt{
+            width: 150px;
+            padding: 10px;
+            margin-left: 30px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        li {
+            list-style-type: none;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+    </ul>
+
+    <h1 class="h1">Warna Elemen Genap</h1>
+    <select class="opt" id="even-color">
+        <option>Green</option>
+        <option>Yellow</option>
+        <option>Red</option>
+    </select>
+
+    <br><h1 class="h1">Warna Elemen Ganjil</h1>
+    <select class="opt" id="odd-color">
+        <option>Blue</option>
+        <option>Purple</option>
+        <option>Brown</option>
+    </select>
+
+    <script>
+        document.getElementById('even-color').addEventListener('change', function() {
+            var selectedColor = this.value;
+            var listItems = document.querySelectorAll('#list li');
+            var i = 1; 
+            while(i < listItems.length) {
+                listItems[i].style.color = selectedColor;
+                i += 2; 
+            }
+        });
+
+        document.getElementById('odd-color').addEventListener('change', function() {
+            var selectedColor = this.value;
+            var listItems = document.querySelectorAll('#list li');
+            var i = 0; 
+            do {
+                listItems[i].style.color = selectedColor;
+                i += 2; 
+            } while(i < listItems.length);
+        });
+    </script>
+    
+</body>
+</html>
